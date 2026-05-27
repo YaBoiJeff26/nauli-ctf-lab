@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  web-vulnerable:
+    build: ./app
+    ports:
+      - "3075:3075"
+    restart: unless-stopped
